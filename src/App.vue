@@ -1,6 +1,6 @@
 <template>
    <the-header></the-header>
-  <div class="flex flex-row w-full">
+  <div class="flex flex-row w-full mt-20">
   <the-sidebar></the-sidebar>
   <div class="flex-1 ml-4">
   <the-content>

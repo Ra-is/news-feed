@@ -1,6 +1,6 @@
 <template>
-<aside class="w-64" aria-label="Sidebar">
-   <div class="h-screen overflow-y-auto py-4 px-3 bg-gray-50  dark:bg-gray-800">
+<aside class="w-64  top-0 relative" aria-label="Sidebar">
+   <div class="absolute top-0 bottom-0 left-0 right-0 overflow-y-auto py-4 px-3  bg-white">
       <ul class="space-y-2">
          <li>
             <router-link to="/home" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-blue-700 dark:hover:bg-gray-700">
