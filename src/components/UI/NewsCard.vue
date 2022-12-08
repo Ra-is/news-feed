@@ -15,8 +15,11 @@
 export default {
    props: ['id','author','content','description'],
    computed: {
+
      newsDetailsLink() {
-      return 'test' + '/' + this.id; // /coaches/c1
+        
+      //return 'test' + '/' + this.id; 
+      return { name: 'business', params: { id: this.id }}
     },
    }
 }
