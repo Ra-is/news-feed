@@ -14,22 +14,34 @@ export default {
   },
   computed: {
     newsTitle(){
-      
-       if(this.$route.meta.needApi == true)
+       if(this.$route.name == 'home')
         {
-           return "News For " + this.$route.name
+            return ""
         }
-        
+        if(this.$route.name == 'notfound')
+        {
+          return ""
+        }
+        else
+        {
+            return "News For " + this.$route.name
+        }
         
         
     }
   },
   watch:{
     $route (to, from){
-       
-         if(to.meta.needApi == true)
+        if(to.name == 'home')
         {
-           this.loadNews(to.name);
+           
+        }
+         if(to.name == 'notfound')
+        {
+           
+        }
+        else{
+            this.loadNews(to.name);
         }
        
     }
