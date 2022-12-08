@@ -9,6 +9,8 @@
         :description="truncateContent(news.description,100)"
         ></news-card>
         </div>
+        
+        <router-view></router-view>
      
 </template>
 
@@ -24,7 +26,7 @@ components: {
     },
      hasNews() {
       return this.$store.getters['news/hasNews'];
-    },
+    }
   },
   methods: {
      truncateContent(text, length, clamp){
