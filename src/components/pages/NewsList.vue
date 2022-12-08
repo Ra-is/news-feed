@@ -16,9 +16,11 @@
 
 <script>
 import NewsCard from '../UI/NewsCard.vue'
+import NewsDetail from '../pages/NewsDetail.vue'
 export default {
 components: {
     NewsCard,
+    NewsDetail,
 },
  computed: {
     latestNews(){

@@ -28,7 +28,7 @@ export default {
   },
   watch:{
     $route (to, from){
-        if(to.meta.needApi == 'home')
+        if(to.meta.needApi)
         {
            this.loadNews(to.name);
         }
