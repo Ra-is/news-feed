@@ -1,4 +1,4 @@
-# NewsFed using Vue 3 + Vite
+# NewsFeed using Vue 3 + Vite
 
 
 
