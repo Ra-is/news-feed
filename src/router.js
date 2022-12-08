@@ -16,29 +16,45 @@ routes: [
         path: '/home', 
         component:  home ,
         name: 'home',
+        meta: {
+            needApi:false
+        },
+        
     }, 
     {
      path: '/business', 
     component:  newsList ,
     name: 'business',
+    meta: {
+        needApi:true
+    },
     children:[
         {
             path: ':id',
             name: 'business-detail',
             component: newsDetail,
             props: true,
+            meta: {
+                needApi:false
+            },
         }
     ]
     }, 
     { path: '/heath',
      component:  newsList ,
       name: 'health',
+      meta: {
+        needApi:true
+    },
       children:[
         {
             path: ':id',
             name: 'health-detail',
             component: newsDetail,
             props: true,
+            meta: {
+                needApi:false
+            },
         }
     ]
     },
@@ -46,12 +62,18 @@ routes: [
         path: '/sports',
         component:  newsList, 
         name:'sports',
+        meta: {
+            needApi:true
+        },
         children:[
             {
                 path: ':id',
                 name: 'sports-detail',
                 component: newsDetail,
                 props: true,
+                meta: {
+                    needApi:false
+                },
             }
         ] 
     },
@@ -59,29 +81,44 @@ routes: [
         path: '/entertainment', 
         component:  newsList, 
         name: 'entertainment',
+        meta: {
+            needApi:true
+        },
         children:[
             {
                 path: ':id',
                 name: 'entertainment-detail',
                 component: newsDetail,
                 props: true,
+                meta: {
+                    needApi:false
+                },
             }
         ]
     },
     { path: '/technology',
      component:  newsList, 
      name:"technology",
+     meta: {
+        needApi:true
+    },
      children:[
         {
             path: ':id',
             name: 'technology-detail',
             component: newsDetail,
             props: true,
+            meta: {
+                needApi:false
+            },
         }
     ]
     },
     { path: '/science', 
     component:  newsList,
+    meta: {
+        needApi:true
+    },
     name:'science',
     children:[
         {
@@ -89,10 +126,20 @@ routes: [
             name: 'science-detail',
             component: newsDetail,
             props: true,
+            meta: {
+                needApi:false
+            },
         }
     ]
     },
-    { path: '/:pathMatch(.*)*', component:  NotFound, name:'notfound'},
+    { 
+    path: '/:pathMatch(.*)*',
+    component:  NotFound,
+    name:'notfound',
+    meta: {
+        needApi:false
+    },
+    },
 ]
 });
 
