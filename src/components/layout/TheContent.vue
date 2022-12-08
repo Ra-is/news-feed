@@ -14,17 +14,13 @@ export default {
   },
   computed: {
     newsTitle(){
-       if(this.$route.name == 'home')
+       if(this.$route.meta.needApi)
         {
-            return ""
-        }
-        if(this.$route.name == 'notfound')
-        {
-          return ""
+             return "News For " + this.$route.name
         }
         else
         {
-            return "News For " + this.$route.name
+            return ""
         }
         
         
@@ -32,16 +28,13 @@ export default {
   },
   watch:{
     $route (to, from){
-        if(to.name == 'home')
+        if(to.meta.needApi == 'home')
         {
-           
+           this.loadNews(to.name);
         }
-         if(to.name == 'notfound')
-        {
-           
-        }
+
         else{
-            this.loadNews(to.name);
+            
         }
        
     }
