@@ -1,6 +1,14 @@
 <template>
     <div class="text-2xl font-serif text-center">
-        New Detail {{hasId}}
+        New Detail  Author By {{newsdetail.author}}
+       
+
+
+<div v-if="hasData" class="block mt-10 max-w-6xl p-6 bg-white border border-gray-200 rounded-lg shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{newsdetail.title}}</h5>
+    <p class="font-normal text-gray-700 dark:text-gray-400">{{newsdetail.description}}</p>
+</div>
+
 
     </div>
 </template>
@@ -10,15 +18,12 @@ export default {
     props: ['id'],
      data(){
         return {
-            newsdetail: null
+            newsdetail: null,
         }
      },
      computed: {
-    hasId()
-    {
-       console.log('news details')
-      console.log(this.newsdetail)
-      console.log('end news details')
+    hasData(){
+        return !!this.newsdetail
     }
   },
   created(){

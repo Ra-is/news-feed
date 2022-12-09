@@ -23,12 +23,13 @@ export default {
                 
                  var counter = 1;
                 for (const key in responseData.articles) {
-                    //console.log(responseData.articles[key].author)
                     const news = {
                         id: counter,
                         author:  responseData.articles[key].author ?? 'No Author',
                         content: responseData.articles[key].content,
-                        description : responseData.articles[key].description
+                        description : responseData.articles[key].description,
+                        title: responseData.articles[key].title,
+                        publishedAt: responseData.articles[key].publishedAt,
 
 
                     }
