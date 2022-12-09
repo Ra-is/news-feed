@@ -53,13 +53,11 @@ components: {
       if(!this.isEmptyObject(to.params))
       {
        this.showlist = false
-      console.log('this is a route to')
-      console.log(to)
-      console.log('end this is a route to')
+     
       }
       else{
          this.showlist = true
-        console.log('no')
+       
       }
       
        

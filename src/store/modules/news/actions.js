@@ -1,8 +1,6 @@
 export default {
     async getAllNews(context,payload){
-        console.log('this payload')
-        console.log(payload.category)
-        console.log('end this payload')
+        
         const apikey = context.getters.apikey
         const category = payload.category;
         // GET https://newsapi.org/v2/everything?q=tesla&from=2022-11-07&sortBy=publishedAt&apiKey=f2ed0c3b14cc4a46ad5f9c2ac6cd9c85
@@ -16,7 +14,7 @@ export default {
             throw error;
             }
             //console.log('news data')
-            console.log(responseData)
+           
 
            
              if(responseData.status == 'ok')
