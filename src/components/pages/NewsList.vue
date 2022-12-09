@@ -1,5 +1,5 @@
 <template>
-     <div v-if="hasNews" class="grid md:grid-cols-3 grid-cols-1 gap-4 mt-3">
+     <div v-if="hasNews && showlist" class="grid md:grid-cols-3 grid-cols-1 gap-4 mt-3">
         <news-card 
         v-for="news in latestNews" 
         :key="news.id"
@@ -22,6 +22,11 @@ components: {
     NewsCard,
     NewsDetail,
 },
+ data(){
+  return {
+    showlist:true
+  }
+ },
  computed: {
     latestNews(){
      return this.$store.getters['news/newsdata'];
@@ -38,8 +43,28 @@ components: {
     var content = node.textContent;
     return content.length > length ? content.slice(0, length) + clamp : content;
 
+    },
+    isEmptyObject(obj){
+    return JSON.stringify(obj) === '{}'
     }
-  }
+  },
+   watch:{
+    $route (to, from){
+      if(!this.isEmptyObject(to.params))
+      {
+       this.showlist = false
+      console.log('this is a route to')
+      console.log(to)
+      console.log('end this is a route to')
+      }
+      else{
+         this.showlist = true
+        console.log('no')
+      }
+      
+       
+    }
+}
 
 
 }
