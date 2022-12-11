@@ -28,6 +28,7 @@ export default {
   },
   created(){
     // let us get the news detail
+    console.log('detail page created');
     const allnews = this.$store.getters['news/newsdata'];
 
      const searchresult = null

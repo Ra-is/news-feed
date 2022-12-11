@@ -27,6 +27,12 @@ components: {
     showlist:true
   }
  },
+ created(){
+  console.log('parent page')
+  console.log(!!this.$route.params.id)
+  this.showlist = !(!!this.$route.params.id)
+  
+ },
  computed: {
     latestNews(){
      return this.$store.getters['news/newsdata'];
@@ -50,6 +56,7 @@ components: {
   },
    watch:{
     $route (to, from){
+      
       if(!this.isEmptyObject(to.params))
       {
        this.showlist = false
