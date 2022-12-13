@@ -6,7 +6,7 @@ export default {
     namespaced: true,
     state(){
         return {
-            apikey: "f2ed0c3b14cc4a46ad5f9c2ac6cd9c85",
+            apikey: import.meta.env.VITE_API_NEWS_FEED_TOKEN,
             newsdata: [],
         }
     },
@@ -14,3 +14,5 @@ export default {
     actions,
     getters
 }
+
+
