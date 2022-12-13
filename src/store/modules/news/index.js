@@ -6,8 +6,8 @@ export default {
     namespaced: true,
     state(){
         return {
-            apikey: import.meta.env.VITE_API_NEWS_FEED_TOKEN,
-            newsdata: [],
+            apikey: import.meta.env.VITE_API_NEWS_TOKEN,
+            newsdata: []
         }
     },
     mutations,
