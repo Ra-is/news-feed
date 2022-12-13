@@ -19,6 +19,12 @@
     cp .env.example .env
     ```
 
+1. Create API token from this .
+
+    ```bash
+    https://newsapi.org/
+    ```
+
 1. Install dependencies.
 
     ```bash
